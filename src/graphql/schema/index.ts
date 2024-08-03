@@ -15,8 +15,8 @@ const typeDefs = gql`
   }
 
   type Query {
-    users: [User!]!
-    projects: [Project!]!
+    users(id: ID, name: String, email: String): [User!]!
+    projects(id: ID, name: String): [Project!]!
   }
 
   input CreateUserInput {
