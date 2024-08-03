@@ -3,21 +3,23 @@ import Project from "../../models/project";
 
 const resolvers = {
   Query: {
-    users: async (_: any, { id, name, email }: { id?: number; name?: string, email?: string }) => {
+    users: async (_: any, { id, name, email, limit, offset }: { id?: number; name?: string, email?: string, limit?: number, offset?: number }) => {
       const where: any = {};
       if (id) where.id = id;
       if (name) where.name = name;
       if (email) where.email = email;
 
-      return User.findAll({ where });
+      return User.findAll({ where, limit, offset });
     },
-    projects: async (_: any, { id, name }: { id?: number; name?: string }) => {
+    projects: async (_: any, { id, name, limit, offset  }: { id?: number; name?: string, limit?: number, offset?: number }) => {
       const where: any = {};
       if (id) where.id = id;
       if (name) where.name = name;
 
       return Project.findAll({
         where,
+        limit,
+        offset,
         include: [{ model: User }],
       });
     },
