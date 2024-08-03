@@ -6,16 +6,19 @@
   "author": "Daniel Vinícius <viniccius774@gmail.com>",
   "scripts": {
     "build": "tsc",
-    "start": "yarn build && node dist/src/server.js",
-    "dev": "tsnd 'src/server.ts'"
+    "start": "rm -rf dist && yarn build && node dist/server.js",
+    "dev": "tsnd 'src/server.ts'",
+    "migrate": "ts-node ./node_modules/.bin/sequelize-cli db:migrate"
   },
   "license": "MIT",
   "dependencies": {
     "apollo-server": "^3.13.0",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "graphql": "^16.9.0",
+    "mysql2": "^3.11.0",
     "sequelize": "^6.37.3",
-    "sqlite3": "^5.1.7"
+    "sequelize-cli": "^6.6.2"
   },
   "devDependencies": {
     "@types/node": "^22.1.0",

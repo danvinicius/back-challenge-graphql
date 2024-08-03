@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "foo",
+    "password": "bar",
+    "database": "back_challenge_graphql",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "foo",
+    "password": "bar",
+    "database": "back_challenge_graphql",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "foo",
+    "password": "bar",
+    "database": "back_challenge_graphql",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

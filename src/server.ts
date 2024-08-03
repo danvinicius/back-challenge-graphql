@@ -7,10 +7,10 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 const startServer = async () => {
   try {
-    // Sincroniza os modelos com o banco de dados
-    await sequelize.sync({ force: true });
+    // Sync models to db
+    await sequelize.sync();
     
-    // Inicia o servidor Apollo
+    // Start apollo server
     const { url } = await server.listen({ port: 4000 });
     console.log(`🚀 Server ready at ${url}`);
   } catch (error) {
